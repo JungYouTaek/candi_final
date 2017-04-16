@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Beginc</th>
+      <th>Endc</th>
+      <th>Act</th>
+      <th>Loca</th>
+      <th>Pwd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cands.each do |cand| %>
+      <tr>
+        <td><%= cand.name %></td>
+        <td><%= cand.date %></td>
+        <td><%= cand.beginc %></td>
+        <td><%= cand.endc %></td>
+        <td><%= cand.act %></td>
+        <td><%= cand.loca %></td>
+        <td><%= link_to 'Show', cand %></td>
+        <td><%= link_to 'Edit', edit_cand_path(cand) %></td>
+        <td><%= link_to 'Destroy', cand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <form action="/cands/destroy" method="post">
+          <input type="text" name ="pwd">
+          <input type="hidden" name="id" value="<%= cand.id %>">
+          <input type="submit" value="보내기">
+        </form>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cand', new_cand_path %>

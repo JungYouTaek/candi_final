@@ -1,0 +1,2 @@
+class Cand < ApplicationRecord
+end

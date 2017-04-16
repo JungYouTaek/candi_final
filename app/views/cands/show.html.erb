@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cand.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cand.date %>
+</p>
+
+<p>
+  <strong>Beginc:</strong>
+  <%= @cand.beginc %>
+</p>
+
+<p>
+  <strong>Endc:</strong>
+  <%= @cand.endc %>
+</p>
+
+<p>
+  <strong>Act:</strong>
+  <%= @cand.act %>
+</p>
+
+<p>
+  <strong>Loca:</strong>
+  <%= @cand.loca %>
+</p>
+
+<p>
+  <strong>Pwd:</strong>
+  password
+</p>
+
+<%= link_to 'Edit', edit_cand_path(@cand) %> |
+<%= link_to 'Back', cands_path %>

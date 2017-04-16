@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: MyString
+  beginc: 1
+  endc: 1
+  act: MyText
+  loca: MyString
+  pwd: MyString
+
+two:
+  name: MyString
+  date: MyString
+  beginc: 1
+  endc: 1
+  act: MyText
+  loca: MyString
+  pwd: MyString

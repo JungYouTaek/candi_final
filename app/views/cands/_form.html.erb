@@ -1,0 +1,53 @@
+<%= form_for(cand) do |f| %>
+  <% if cand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cand.errors.count, "error") %> prohibited this cand from being saved:</h2>
+
+      <ul>
+      <% cand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :beginc %>
+    <%= f.number_field :beginc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endc %>
+    <%= f.number_field :endc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :act %>
+    <%= f.text_area :act %>
+  </div>
+
+  <div class="field">
+    <%= f.label :loca %>
+    <%= f.text_field :loca %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pwd %>
+    <input type="password"
+    <%= f.text_field :pwd %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
