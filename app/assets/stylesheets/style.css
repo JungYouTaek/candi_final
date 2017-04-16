@@ -149,11 +149,9 @@ nav p {
 .navbar-custom .nav li.active {
     outline: none;
 }
-.navbar-custom .nav li.active a {
-    background-color: #003478;
-}
+
 .navbar-custom .nav li.active a:hover {
-    color: #FF6347;
+    color: #a94442;
 }
 @media (min-width: 768px) {
     .navbar-custom {
