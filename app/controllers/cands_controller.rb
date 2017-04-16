@@ -1,4 +1,4 @@
-$password = 'sajasaja'
+$password = 'dayday123'
 class CandsController < ApplicationController
   before_action :set_cand, only: [:show, :edit, :update, :destroy]
 

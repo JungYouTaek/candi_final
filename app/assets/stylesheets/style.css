@@ -1,8 +1,10 @@
 /* Default*/
+
 body {
     width: 100%;
     height: 100%;
     font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    font-weight: 300;
     color: #FF6347;
     background-image: url("stardust.png");
     overflow-x:hidden;
@@ -22,18 +24,18 @@ h6 {
     margin: 0;
     text-transform: uppercase;
     font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 p {
     margin: 0;
-    font-size: 20px;
+    font-size: 40px;
     line-height: 1.5;
 }
 @media (min-width: 768px) {
     p {
         margin: 0;
-        font-size: 30px;
+        font-size: 50px;
         line-height: 1.6;
     }
 }
@@ -82,7 +84,9 @@ nav p {
         transform: translateY(-50%);
     }
 }
-
+.nav-link {
+    cursor: pointer;
+}
 .navbar-collapse.collapse {
     display: block!important;
 }
@@ -98,6 +102,9 @@ nav p {
 .navbar-right {
     float: right!important;
 }
+.navbar-brand {
+    font-size: 30px;
+}
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -109,14 +116,14 @@ nav p {
 .navbar-custom .navbar-toggle {
     color: #FF6347;
     background-color: #003478;
-    font-size: 12px;
+    font-size: 20spx;
 }
 .navbar-custom .navbar-toggle:focus,
 .navbar-custom .navbar-toggle:active {
     outline: none;
 }
 .navbar-custom .navbar-brand {
-    font-weight: 700;
+    font-weight: 400;
 }
 .navbar-custom .navbar-brand:focus {
     outline: none;
@@ -165,6 +172,23 @@ nav p {
     }
 }
 
+/* modal size */
+.modal-title{
+    font-size: 50px !important;
+}
+ .modal-body {
+    font-size: 35px !important;
+    line-height: 50px !important;
+}
+@media (min-width: 768px) {
+    .modal-title{
+    font-size: 30px !important;
+}
+ .modal-body {
+    font-size: 25px !important;
+    line-height: 30px !important;
+}
+}
 .modal-header::after {
     content: '';
     display: table;
@@ -172,6 +196,17 @@ nav p {
 }
 .modal-header h4 {
     float: left;
+}
+.butt {
+    font-size: 23px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 30px;
+    font-weight: 500;
+}
+#today_butt {
+    font-size: 23px !important;
+    background-color: tomato !important;
+    color: white !important;
 }
 button {
     float: right;
@@ -199,8 +234,13 @@ button span {
     vertical-align: middle;
     padding: 50px 0 10px 0;
 }
+.intro .intro-body p {
+    margin-bottom: 20px;
+    font-size: 40px !important;
+    font-weight: 400;
+}
 .intro .intro-body .brand-heading {
-    font-size: 20px;
+    font-size: 35px;
     color: #faebcc;
 }
 @media (min-width: 768px) {
@@ -239,8 +279,8 @@ section .container {
 
 /*timeline IN article*/
 article{
-    min-height:200vh;
     background-image: url("stardust.png");
+    margin-bottom: 100px;
 }
 article .container {
     margin: 0 auto;
@@ -459,9 +499,9 @@ ul.banner-social-buttons {
 footer {
     padding: 50px 0;
 }
-footer p {
+.text-center p {
     margin: 0;
-    font-size: 13px !important;
+    font-size: 20px !important;
 }
 ::-moz-selection {
     text-shadow: none;
@@ -482,3 +522,9 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
+
+@media (max-width: 510px) {
+    #footer_special p{
+        font-size:100px !important;
+    }
+    }

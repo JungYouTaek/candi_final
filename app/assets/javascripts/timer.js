@@ -15,5 +15,5 @@ var x = setInterval(function() {
     var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("d-day").innerHTML = "대선일까지 " + d +"일 " + h + "시간 " + m + "분 " + s + "초 남았습니다.";
+    document.getElementById("d-day").innerHTML = d +"일 " + h + "시간 " + m + "분 " + s + "초 남았습니다.";
 });

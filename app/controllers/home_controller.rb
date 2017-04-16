@@ -1,3 +1,4 @@
+require 'date'
 class HomeController < ApplicationController
   def index
     if params[:datetime].blank?
@@ -6,8 +7,8 @@ class HomeController < ApplicationController
       @today = params[:datetime]
     end
 
-    today = Time.now
-    today_cand = Cand.where("date LIKE ?", "오늘")
+    today_cand = Cand.where("date LIKE ?",@today.to_datetime.day)
+    @today.to_datetime
     ahns_8 = today_cand.where("name LIKE ? AND beginc LIKE ?", "안철수", "8")
     ahns_9 = today_cand.where("name LIKE ? AND beginc LIKE ?", "안철수", "9")
     ahns_10 = today_cand.where("name LIKE ? AND beginc LIKE ?", "안철수", "10")
