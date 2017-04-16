@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
   def index
+    if params[:datetime].blank?
+      @today = DateTime.now.new_offset(9.0/24)
+    else
+      @today = params[:datetime]
+    end
+
     today = Time.now
     today_cand = Cand.where("date LIKE ?", "오늘")
     ahns_8 = today_cand.where("name LIKE ? AND beginc LIKE ?", "안철수", "8")

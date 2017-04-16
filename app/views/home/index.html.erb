@@ -1,7 +1,7 @@
 <!-- Navigation -->
 
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
     <p><a class="navbar-brand page-scroll" href="#page-top">데일리 후보</a></p>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right">
@@ -21,71 +21,80 @@
         </li>
       </ul>
     </div>
-    </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- How to use / Modal -->
-  <div class="modal fade" id="largeInform" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modalLabelLarge">어떻게 보는거지?</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          각 후보자 이미지를 클릭하면 진행중인 스케줄을 확인할 수 있습니다.<br>
-          초록색 점*을 누르면 그 시간대의 스케줄을 확인할 수 있습니다.
-        </div>
+<!-- How to use / Modal -->
+<div class="modal fade" id="largeInform" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modalLabelLarge">어떻게 보는거지?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        각 후보자 이미지를 클릭하면 진행중인 스케줄을 확인할 수 있습니다.<br>
+        초록색 점*을 누르면 그 시간대의 스케줄을 확인할 수 있습니다.
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="largeShoes" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modalLabelLarge">데일리 후보에 대해...</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          후보자의 공약과 정책도 중요하지만<br>
-          실제로 보여지는 모습도 중요하다.<br>
-          따라서 우리는 <strong>후보자의 행적</strong>을 <br>
-          보다 쉽고 편하게 볼 수 있고,<br>
-          더불어 유저들의 의견공유도 가능한 <br><strong>소통의 창구</strong>를 만들고자 한다.
-        </div>
+<div class="modal fade" id="largeShoes" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modalLabelLarge">데일리 후보에 대해...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        후보자의 공약과 정책도 중요하지만<br>
+        실제로 보여지는 모습도 중요하다.<br>
+        따라서 우리는 <strong>후보자의 행적</strong>을 <br>
+        보다 쉽고 편하게 볼 수 있고,<br>
+        더불어 유저들의 의견공유도 가능한 <br><strong>소통의 창구</strong>를 만들고자 한다.
       </div>
     </div>
   </div>
+</div>
 
 
 <!-- Intro Header -->
-  <header class="intro">
-    <div class="intro-body">
-      <h1 class="brand-heading" id="d-day" ></h1>
-    </div>
-  </header>
-  <section>
+<header class="intro">
+  <div class="intro-body">
+    <h1 class="brand-heading" id="d-day" ></h1>
+  </div>
+</header>
+<section>
 
-  </section>
+</section>
+<section class="sticky-top">
+  <div class="container d-flex justify-content-around mt-3 mb-4" >
+    <form action="/home/index" method= "get">
+      <input type="hidden" name = "datetime" value="<%=(@today.to_datetime-1)%>">
+      <input type="submit" class="btn" value="<%=(@today.to_datetime-1).strftime('%m/%d')%> 일정">
+    </form>
+    <a class="btn" href="#" role="button">*<%= @today.to_datetime.strftime('%m/%d') %> 일정</a>
+    <form action="/home/index" method= "get">
+      <input type="hidden" name = "datetime" value="<%=(@today.to_datetime+1)%>">
+      <input type="submit" class="btn" value="<%=(@today.to_datetime+1).strftime('%m/%d')%> 일정">
+    </form>
+  </div>
+</section>
+<section>
 
-  <section>
-    <div class="container mt-3 mb-4"} ;">
-      <a class="btn" href="#" role="button">날짜별로 보기</a>
-    </div>
-
-    <div class="container candidate_img">
-      <div><%= image_tag("1Moon.png", alt: "문") %></div>
-      <div><%= image_tag("2Hong.png", alt: "홍") %></div>
-      <div><%= image_tag("3Ahn.png", alt: "안") %></div>
-      <div><%= image_tag("4Yoo.png", alt: "유") %></div>
-      <div><%= image_tag("5Sim.png", alt: "심") %></div>
-    </div>
-  </section>
+  <div class="container candidate_img">
+    <div><%= image_tag("1Moon.png", alt: "문") %></div>
+    <div><%= image_tag("2Hong.png", alt: "홍") %></div>
+    <div><%= image_tag("3Ahn.png", alt: "안") %></div>
+    <div><%= image_tag("4Yoo.png", alt: "유") %></div>
+    <div><%= image_tag("5Sim.png", alt: "심") %></div>
+  </div>
+</section>
 <article>
   <% 15.times do |i| %>
       <div class="container d-flex justify-content-between background_line" id="timeline<%= i+8 %>">
@@ -118,6 +127,7 @@
   <% end %>
 
 </article>
+
 <div id="lv-container" data-id="city" data-uid="MTAyMC8yODIzMi80ODA0">
   <script type="text/javascript">
       (function(d, s) {
@@ -135,14 +145,14 @@
   <noscript>라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
 </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="text-center">
-      <p>Copyright &copy; Daily Candidate 2017</p>
-      <p>이 사이트는 정보 제공만을 목적으로 제작되었으며, 정치적 목적을 가지고 있지 않습니다.</p>
-      <p>멋쟁이 사자처럼 5기</p>
-      <p>문성혁 최성흠 장서정 정유택 김연진 김성수</p>
-      <p><a href="https://twitter.com/dailycandidate">트위터</a></p>
-    </div>
-  </footer>
+<!— Footer —>
+<footer>
+  <div class="text-center">
+    <p>Copyright &copy; Daily Candidate 2017</p>
+    <p>이 사이트는 정보 제공만을 목적으로 제작되었으며, 정치적 목적을 가지고 있지 않습니다.</p>
+    <p>멋쟁이 사자처럼 5기</p>
+    <p>문성혁 최성흠 장서정 정유택 김연진 김성수</p>
+    <p><a href="https://twitter.com/dailycandidate">트위터</a></p>
+  </div>
+</footer>
 </div>

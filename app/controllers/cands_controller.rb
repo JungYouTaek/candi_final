@@ -1,3 +1,4 @@
+$password = 'sajasaja'
 class CandsController < ApplicationController
   before_action :set_cand, only: [:show, :edit, :update, :destroy]
 
@@ -25,55 +26,54 @@ class CandsController < ApplicationController
   # POST /cands.json
   def create
     @cand = Cand.new(cand_params)
-
-    if @cand.pwd == $password
-      respond_to do |format|
-        if @cand.save
-          format.html { redirect_to @cand, notice: 'Cand was successfully created.' }
-          format.json { render :show, status: :created, location: @cand }
-        else
-          format.html { render :new }
-          format.json { render json: @cand.errors, status: :unprocessable_entity }
+    @cand = Cand.new(cand_params)
+        respond_to do |format|
+          if @cand.pwd == $password
+            if @cand.save
+              format.html { redirect_to @cand, notice: 'Cand was successfully created.' }
+              format.json { render :show, status: :created, location: @cand }
+              @cand.pwd = "re"
+            else
+              format.html { render :new }
+              format.json { render json: @cand.errors, status: :unprocessable_entity }
+            end
+          else
+            format.html {render :new, notice: 'no'}
+            format.json { render json: @cand.errors, status: :unprocessable_entity }
+            @cand.pwd = "re"
+          end
         end
-      end
-    else
-      respond_to do |format|
-        format.html {render :new, notice: 'no'}
-      end
-    end
   end
 
   # PATCH/PUT /cands/1
   # PATCH/PUT /cands/1.json
   def update
-
-    if @cand.pwd == $password
-      respond_to do |format|
-        if @cand.update(cand_params)
-          format.html { redirect_to @cand, notice: 'Cand was successfully updated.' }
-          format.json { render :show, status: :ok, location: @cand }
-        else
-          format.html { render :edit }
-          format.json { render json: @cand.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+          if @cand.update(cand_params)
+            if @cand.pwd == $password
+            format.html { redirect_to @cand, notice: 'Cand was successfully updated.' }
+            format.json { render :show, status: :ok, location: @cand }
+          else
+            format.html {render :edit, notice: 'no'}
+            format.json { render json: @cand.errors, status: :unprocessable_entity }
+          end
+          else
+            format.html { render :edit }
+            format.json { render json: @cand.errors, status: :unprocessable_entity }
+          end
       end
-    else
-      respond_to do |format|
-        format.html {render :edit, notice: 'no'}
-      end
-    end
   end
 
   # DELETE /cands/1
   # DELETE /cands/1.json
   def destroy
-    if params[:pwd] == @cand.pwd
-      @cand.destroy
-      respond_to do |format|
-        format.html { redirect_to ahns_url, notice: 'Cand was successfully destroyed.' }
-        format.json { head :no_content }
+    if params[:pwd] == $password
+        @cand.destroy
+        respond_to do |format|
+          format.html { redirect_to cands_url, notice: 'Cand was successfully destroyed.' }
+          format.json { head :no_content }
+        end
       end
-    end
   end
 
   private
