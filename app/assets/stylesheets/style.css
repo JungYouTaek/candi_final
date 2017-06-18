@@ -222,10 +222,7 @@ button span {
     text-align: center;
     color: #FF6347;
     background: inherit;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
 }
 .intro .intro-body {
     display: table-cell;
@@ -436,11 +433,8 @@ article .container div {
     padding: 50px 0;
     color: #FF6347;
     background: url(downloads-bg.jpg) no-repeat center center scroll;
-    background-color: #003478
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background-color: #003478;
     background-size: cover;
-    -o-background-size: cover;
 }
 
 @media (min-width: 767px) {
